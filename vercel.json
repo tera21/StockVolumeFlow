@@ -1,4 +1,10 @@
 {
   "buildCommand": "echo 'Build skipped'",
-  "outputDirectory": "artifacts/kospi-flow/dist"
+  "outputDirectory": "artifacts/kospi-flow/dist",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/artifacts/kospi-flow/dist/index.html"
+    }
+  ]
 }
