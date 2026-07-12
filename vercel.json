@@ -1,0 +1,4 @@
+{
+  "buildCommand": "echo 'Build skipped'",
+  "outputDirectory": "artifacts/kospi-flow/dist"
+}
