@@ -1,0 +1,31 @@
+kind = "data-app"
+previewPath = "/"
+title = "KOSPI 거래대금 집중도"
+version = "1.0.0"
+id = "artifacts/kospi-flow"
+router = "path"
+
+[[integratedSkills]]
+name = "data-visualization"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 21217
+
+[services.development]
+run = "pnpm --filter @workspace/kospi-flow run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/kospi-flow", "run", "build" ]
+publicDir = "artifacts/kospi-flow/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "21217"
+BASE_PATH = "/"
